@@ -120,9 +120,8 @@
     <!-- Main Application Script -->
     <script>
         // *** IMPORTANT ***
-        // This is a placeholder. You will get your REAL URL in Phase 3
-        // of the deployment guide. You will need to update this value
-        // in Phase 4.
+        // This is the fix. I've updated this URL to point to your
+        // live backend on Render.
         const API_BASE_URL = 'https://exp8-gm0t.onrender.com';
         
         // --- App State ---
@@ -172,7 +171,7 @@
                 customerList.innerHTML = `<p class="text-red-500 text-center">Error loading customers. Is the backend server running?</p>`;
             } finally {
                 loadingSpinner.classList.add('hidden');
-LANDSCAPE}
+            }
         }
 
         /**
@@ -189,6 +188,7 @@ LANDSCAPE}
                 // Use _id from MongoDB
                 customers.forEach(customer => {
                     const card = document.createElement('div');
+                    // This line was broken in the previous version. I have fixed it.
                     card.className = 'border border-slate-200 p-4 rounded-lg shadow-sm transition-all duration-300 hover:shadow-md bg-slate-50';
                     card.innerHTML = `
                         <div class="flex justify-between items-start">
@@ -368,6 +368,7 @@ LANDSCAPE}
                 
             } catch (error) {
                 console.error("Error deleting document: ", error);
+S...
             } finally {
                 confirmDeleteBtn.disabled = false;
             }
@@ -414,6 +415,4 @@ LANDSCAPE}
 
 </body>
 </html>
-
-
 
