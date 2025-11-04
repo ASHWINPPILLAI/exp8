@@ -119,13 +119,13 @@
 
     <!-- Main Application Script -->
     <script>
-        // *** THIS IS THE FIX ***
         // We wrap ALL the code in this 'DOMContentLoaded' listener
         // to make sure the HTML is loaded BEFORE the script runs.
         document.addEventListener('DOMContentLoaded', () => {
 
-            // THE URL WAS INVALID (missing '://'). I have fixed it here.
-            const API_BASE_URL = 'https://exp8-gm0t.onrender.com';
+            // *** THIS IS THE FIX ***
+            // Updated the URL to point to your new backend service.
+            const API_BASE_URL = 'https://exp8-gm0t.onrender.com/api/customers';
             
             // --- App State ---
             let editingCustomerId = null; 
@@ -394,9 +394,9 @@
             }
 
             // --- Event Listeners ---
+            // This is the line that was broken. I have fixed it.
             customerForm.addEventListener('submit', handleFormSubmit);
             customerList.addEventListener('click', handleCustomerListClick);
-CHOOSE...
             cancelButton.addEventListener('click', resetForm);
             
             // Modal Listeners
